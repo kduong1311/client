@@ -11,7 +11,7 @@
                 <div class="avatar-container">
                   <img :src="getAvatarUrl(user.avatar)" alt="Avatar" class="img-fluid" />
                 </div>
-                <h5 class="pt-5">{{ user.fullname }}</h5> {{ getAvatarUrl(user.avatar) }}
+                <h5 class="pt-5">{{ user.fullname }}</h5>
                 <i class="far fa-edit mb-5"></i>
               </div>
               <!-- User Information Section -->
