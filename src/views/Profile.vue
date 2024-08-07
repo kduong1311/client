@@ -72,7 +72,7 @@ export default {
     }
   },
   getAvatarUrl(avatar) {
-    return avatar ? `http://localhost:5000/${avatar}` : '';
+    return avatar ? `${avatar}` : '';
   },
   },
   mounted() {
