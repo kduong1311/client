@@ -5,7 +5,7 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Usernamee</th>
+              <th>Username</th>
               <th>Full Name</th>
               <th>Phone</th>
               <th>Role</th>
@@ -18,7 +18,7 @@
               <td>{{ user.fullname }}</td>
               <td>{{ user.phoneNumber }}</td>
               <td>{{ user.role }}</td>
-              <td><img :src="user.avatar" alt="Avatar" width="50"></td>{{user.avatar}}
+              <td><img :src="user.avatar" alt="Avatar" width="50"></td>
             </tr>
           </tbody>
         </table>
@@ -45,7 +45,7 @@
     methods: {
       AvatarUrl(url) {
         if (!url) {
-          return 'default-avatar-url.png'; // Replace with your default avatar URL
+          return ''; 
         }
         return url.startsWith('https') ? url : `https://server-xwi5.onrender.com/${url}`;
       }

@@ -34,7 +34,7 @@
             <router-link class="nav-link" to="/products" @click.native="handleProductsClick">Books</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/contact">Contacttt</router-link>
+            <router-link class="nav-link" to="/contact">Contact</router-link>
           </li>
         </ul>
         <ul class="navbar-nav d-flex flex-row ms-auto">
