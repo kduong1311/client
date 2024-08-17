@@ -47,7 +47,7 @@
         if (!url) {
           return 'default-avatar-url.png'; // Replace with your default avatar URL
         }
-        return url.startsWith('http') ? url : `https://server-xwi5.onrender.com/${url}`;
+        return url.startsWith('https') ? url : `https://server-xwi5.onrender.com/${url}`;
       }
     },
     async mounted() {
