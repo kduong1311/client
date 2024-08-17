@@ -30,6 +30,7 @@
             <th>Name</th>
             <th>Price</th>
             <th>Description</th>
+            <th>Category</th>
             <th>Image</th>
             <th>Action</th>
           </tr>
@@ -39,6 +40,7 @@
             <td>{{ truncatedName(product.name) }}</td>
             <td>${{ product.price }}</td>
             <td>{{ truncatedDescription(product.description) }}</td>
+            <td>${{ product.category }}</td>
             <td><img :src="getImageUrl(product.image)" alt="Product Image" class="table-img"></td>
             <td>
               <button 
