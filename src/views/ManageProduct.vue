@@ -109,14 +109,17 @@ export default {
 
 <style scoped>
 .container {
-  margin-left: 45px;
-  margin-right: 45px;
-  max-height: calc(100vh - 100px);
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
   overflow-y: auto;
 }
 
 .banner {
   width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 .buttonnew {
