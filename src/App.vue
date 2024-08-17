@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <NavBar v-if="showNavBar" />
+    <NavBar v-if="showNavBar" class="navbar-fixed" />
     <main class="main-content">
       <router-view></router-view>
     </main>
@@ -36,8 +36,16 @@ export default {
   min-height: 100vh; 
 }
 
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 .main-content {
   flex: 1; 
+  margin-top: 60px; /* Adjust this value based on your navbar height */
 }
 
 footer {
