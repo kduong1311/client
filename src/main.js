@@ -19,8 +19,14 @@ Vue.use(VueFlashMessage, {
 
 Vue.config.productionTip = false
 
+const token = localStorage.getItem('token');
+if (token) {
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  store.commit('SET_AUTHENTICATED', true);
+}
+
 new Vue({
   router,
   store,
-  render: function (h) { return h(App) },
+  render: function (h) { return h(App) }
 }).$mount('#app')

@@ -1,6 +1,6 @@
 <template>
   <section class="d-flex justify-content-center align-items-center vh-100">
-    <div class="card shadow-sm" style="border-radius: 1rem; width: 100%; max-width: 400px;">
+    <div class="card shadow-sm" style="width: 100%; max-width: 400px;">
       <div class="row g-0">
         <div class="col d-flex align-items-center">
           <div class="card-body p-4">
@@ -85,9 +85,8 @@ body {
 }
 
 .card {
-  background-color: #010000da;
+  background-color: #ff00008f;
   border: none;
-  border-radius: 1rem;
 }
 
 .btn-dark {

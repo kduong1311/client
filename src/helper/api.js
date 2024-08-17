@@ -6,9 +6,10 @@ const handleError = fn => async (...params) => {
   } catch (error) {
     const message = error.response
       ? `${error.response?.data?.message || error.response.statusText}`
-      : 'Lỗi mạng hoặc máy chủ không phản hồi';
+      : 'Network Error or Server not Response';
     
-    // Truyền thông báo lỗi ra ngoài để xử lý ở nơi gọi
+    // Throw the error message to where call this method
+    console.error(error)
     throw { message };
   }
 };
@@ -29,7 +30,6 @@ const login = handleError(async (username, password) => {
   return response.data;
 });
 
-
 // Cập nhật profile người dùng
 const updateProfile = handleError(async (formData) => {
   const response = await axios.put('/api/editprofile', formData, {
@@ -40,50 +40,67 @@ const updateProfile = handleError(async (formData) => {
   return response.data;
 });
 
-// Lấy tất cả các từ điển
-const ViewAllVocabs = handleError(async () => {
-  const response = await axios.get('/vocabs');
+
+// Lấy tất cả các sản phẩm
+const viewAllProducts = handleError(async () => {
+  const response = await axios.get('/products');
   return response.data;
 });
 
-// Lấy từ điển theo ID
-const ViewVocabById = handleError(async (id) => {
-  const response = await axios.get(`vocabs/${id}`);
+// Lấy sản phẩm theo ID
+const viewProductById = handleError(async (id) => {
+  const response = await axios.get(`products/${id}`);
   return response.data;
 });
 
-// Thêm một từ điển mới
-const AddNewVocab = handleError(async (vocab) => {
-  const response = await axios.post('vocabs', vocab);
+// Thêm một sản phẩm mới
+const addNewProduct = handleError(async (formData) => {
+  const response = await axios.post('products', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
   return response.data;
 });
 
-// Xóa tất cả các từ điển
-const DeleteAllVocab = handleError(async () => {
-  const response = await axios.delete('vocabs');
+// Cập nhật sản phẩm theo ID
+const updateProduct = handleError(async (id, formData) => {
+  const response = await axios.put(`products/${id}`, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
   return response.data;
 });
 
-// Cập nhật thông tin một từ điển theo ID
-const UpdateVocab = handleError(async (id, vocab) => {
-  const response = await axios.put(`vocabs/${id}`, vocab);
+// Xóa sản phẩm theo ID
+const deleteProductById = handleError(async (id) => {
+  const response = await axios.delete(`products/${id}`);
   return response.data;
 });
 
-// Xóa một từ điển theo ID
-const DeleteAVocab = handleError(async (id) => {
-  const response = await axios.delete(`vocabs/${id}`);
+// Xóa tất cả các sản phẩm
+const deleteAllProducts = handleError(async () => {
+  const response = await axios.delete('products');
   return response.data;
 });
+
+const searchProducts = handleError(async (query) => {
+  const response = await axios.get(`/products/search?q=${query}`);
+  return response.data;
+});
+
+
 
 export {
   register,
   login,
-  ViewAllVocabs,
-  ViewVocabById,
-  AddNewVocab,
-  UpdateVocab,
-  DeleteAVocab,
-  DeleteAllVocab,
-  updateProfile
+  viewAllProducts,
+  viewProductById,
+  addNewProduct,
+  updateProduct,
+  deleteProductById,
+  deleteAllProducts,
+  updateProfile,
+  searchProducts,
 };

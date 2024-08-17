@@ -12,7 +12,7 @@
     name: "Start",
     methods: {
       goToMain() {
-        this.$router.push('/homepage'); // Update with the correct route for your main system
+        this.$router.push('/homepage');
       }
     }
   };
@@ -20,44 +20,46 @@
   
   <style scoped>
   body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden; /* Đảm bảo không có thanh cuộn */
+}
+
+.start-page {
+  width: 100%;
+  height: 100vh; /* Chiếm toàn bộ chiều cao của màn hình */
+  background: url('../assets/pngtree-d-illustration-of-old-library-or-bookshop-with-many-books-on-image_16124328-fotor-20240807142751\ \(1\).png') no-repeat center center;
+  background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ phần tử */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.system-name {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.start-button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #ffcc00;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .start-page {
-    width: 100%;
-    height: 100%;
-    background:
-    url('../assets/pngtree-d-illustration-of-old-library-or-bookshop-with-many-books-on-image_16124328-fotor-20240807142751\ \(1\).png');
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  to {
+    opacity: 1;
   }
-  
-  .system-name {
-    animation: fadeIn 2s ease-in-out;
-  }
-  
-  .start-button {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .start-button:hover {
-    background-color: #ffcc00;
-    transform: scale(1.1);
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+}
+
   </style>
   

@@ -1,13 +1,8 @@
 import axios from 'axios';
+import store from './store/auth'
 
 // Đặt URL gốc cho tất cả các yêu cầu HTTP
-axios.defaults.baseURL = 'https://server-xwi5.onrender.com/';
-
-// Lấy token từ localStorage và thêm vào tiêu đề Authorization
-const token = localStorage.getItem('token');
-if (token) {
-  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-}
+axios.defaults.baseURL = 'http://localhost:5000/';
 
 // Thiết lập một interceptor để thêm token vào tiêu đề của mỗi yêu cầu
 axios.interceptors.request.use(config => {

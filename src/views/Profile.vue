@@ -12,7 +12,7 @@
                   <img :src="getAvatarUrl(user.avatar)" alt="Avatar" class="img-fluid" />
                 </div>
                 <h5 class="pt-5">{{ user.fullname }}</h5>
-                <i class="far fa-edit mb-5"></i>
+                <router-link to="/editprofile"><i class="far fa-edit mb-5"></i></router-link>
               </div>
               <!-- User Information Section -->
               <div class="col-md-8">
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
@@ -63,7 +64,7 @@ export default {
     ...mapActions(['fetchProfile']),
   async getUserProfile() {
     try {
-      // fetchProfile đã commit dữ liệu vào store, nên bạn chỉ cần lấy dữ liệu từ store
+      // fetchProfile was commit data in store,  get the data from store now
       await this.fetchProfile();
       this.user = this.$store.getters.profile;
     } catch (error) {
@@ -72,7 +73,7 @@ export default {
     }
   },
   getAvatarUrl(avatar) {
-    return avatar ? `https://server-xwi5.onrender.com/${avatar}` : '';
+    return avatar ? `http://localhost:5000/${avatar}` : null;
   },
   },
   mounted() {

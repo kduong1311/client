@@ -6,7 +6,6 @@
       Welcome to our bookstore! Discover a world of literature with our curated selection of books.
       From bestsellers to hidden gems, find your next great read with ease.
     </p>
-    <button class="btn btn-dark btn-lg mt-3" @click="navigateToStore">Product List</button>
   </div>
   </div>
   
@@ -15,11 +14,6 @@
 <script>
 export default {
   name: 'HomePage',
-  methods: {
-    navigateToStore() {
-      this.$router.push('/');
-    }
-  }
 }
 </script>
 

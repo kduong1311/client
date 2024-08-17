@@ -2,7 +2,7 @@
   <div class="app">
     <NavBar v-if="showNavBar" />
     <main class="main-content">
-      <router-view></router-view> <!-- Hiển thị nội dung trang ở đây -->
+      <router-view></router-view>
     </main>
     <Footer v-if="showFooter" />
   </div>
@@ -33,10 +33,16 @@ export default {
 .app {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh; /* Đảm bảo chiều cao tối thiểu của app là chiều cao của màn hình */
 }
 
 .main-content {
-  flex: 1;
+  flex: 1; /* Chiếm không gian còn lại giữa header và footer */
+}
+
+footer {
+  flex-shrink: 0; /* Đảm bảo footer không bị thu nhỏ */
+  padding: 1rem; /* Ví dụ: Khoảng cách bên trong footer */
+  text-align: center; /* Canh giữa nội dung trong footer */
 }
 </style>

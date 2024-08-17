@@ -5,7 +5,7 @@
           <div class="col-12 col-md-8 col-lg-6 col-xl-5">
             <div class="card" style="border-radius: 15px;">
               <div class="card-body p-4">
-                <h2 class="text-uppercase text-center mb-4">Update Profilee</h2>
+                <h2 class="text-uppercase text-center mb-4">Update Profile</h2>
   
                 <form @submit.prevent="submitUpdate">
   
@@ -85,6 +85,7 @@
           formData.append('fullname', this.localProfile.fullname);
           formData.append('age', this.localProfile.age);
           formData.append('phoneNumber', this.localProfile.phoneNumber);
+          formData.append('role', this.localProfile.role);
           formData.append('avatar', this.localProfile.avatar);
   
           await this.updateProfile(formData);
