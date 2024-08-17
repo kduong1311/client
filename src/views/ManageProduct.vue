@@ -113,8 +113,6 @@ export default {
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
 }
 
 .banner {
