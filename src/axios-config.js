@@ -1,10 +1,9 @@
 import axios from 'axios';
 import store from './store/auth'
 
-// Đặt URL gốc cho tất cả các yêu cầu HTTP
-axios.defaults.baseURL = 'http://localhost:5000/';
+axios.defaults.baseURL = 'https://server-xwi5.onrender.com/';
 
-// Thiết lập một interceptor để thêm token vào tiêu đề của mỗi yêu cầu
+//add token for each request
 axios.interceptors.request.use(config => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -15,13 +14,13 @@ axios.interceptors.request.use(config => {
   return Promise.reject(error);
 });
 
-// Thiết lập một interceptor để xử lý lỗi
+//set up a interceptor to handle error
 axios.interceptors.response.use(response => {
   return response;
 }, error => {
-  // Xử lý lỗi ở đây (ví dụ: logout nếu token hết hạn)
+  //handle the error
   if (error.response && error.response.status === 401) {
-    // Xử lý lỗi xác thực
+    //handle auth error
     store.dispatch('logout');
   }
   return Promise.reject(error);

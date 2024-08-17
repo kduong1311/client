@@ -65,7 +65,7 @@ export default {
   methods: {
     ...mapActions(['login']),
     async handleLogin() {
-      this.$store.commit('CLEAR_MESSAGES'); // Xóa thông báo cũ trước khi thực hiện đăng nhập
+      this.$store.commit('CLEAR_MESSAGES'); 
       try {
         await this.login({ username: this.username, password: this.password });
         if (!this.error) {

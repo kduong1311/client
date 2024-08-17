@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-3">
     <div class="banner mb-3">
-      <img src="http://localhost:5000/uploads/Screenshot 2024-08-10 002838.png" alt="Banner" class="img-fluid">
+      <img src="https://server-xwi5.onrender.com/uploads/Screenshot 2024-08-10 002838.png" alt="Banner" class="img-fluid">
     </div>
     <div class="buttonnew d-flex justify-content-between mb-3">
 
@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     getImageUrl(image) {
-      return `http://localhost:5000/${image}`;
+      return `https://server-xwi5.onrender.com/${image}`;
     },
     truncatedDescription(description) {
       return description.length > 20 ? description.substring(0, 20) + '...' : description;

@@ -110,11 +110,11 @@
   .form-container {
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 1rem; /* Giảm padding để làm cho container nhỏ hơn */
+    padding: 1rem; 
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px; /* Giảm kích thước container */
-    margin: 0 auto; /* Căn giữa container */
+    max-width: 400px; 
+    margin: 0 auto; 
   }
   
   .form-group {

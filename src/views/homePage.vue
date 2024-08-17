@@ -21,11 +21,11 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
 
 .homepage {
-  height: 100vh; /* Chiều cao toàn màn hình */
+  height: 100vh; 
   background-image: url('https://static.vecteezy.com/system/resources/thumbnails/013/651/331/small_2x/graphic-design-illustration-of-a-stack-of-encyclopedia-books-background-with-blank-area-free-vector.jpg');
-  background-size: cover; /* Điều chỉnh hình nền để phủ toàn bộ trang */
-  background-position: center; /* Căn giữa hình nền */
-  background-repeat: no-repeat; /* Không lặp lại hình nền */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
 
 .container {
@@ -36,12 +36,12 @@ export default {
 .display-4 {
   padding-top: 20vh;
   font-family: 'Lora', serif;
-  font-weight: 700; /* In đậm */
+  font-weight: 700; 
 }
 
 .lead {
   font-family: 'Lora', serif;
-  font-weight: 400; /* Thông thường, có thể điều chỉnh theo ý muốn */
-  font-size: 1.25rem; /* Kích thước chữ */
+  font-weight: 400; 
+  font-size: 1.25rem; 
 }
 </style>

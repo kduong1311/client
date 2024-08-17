@@ -80,12 +80,12 @@
     padding: 1.5rem;
   }
   .avatar-container {
-    width: 170px; /* Increased size */
-    height: 200px; /* Increased size */
+    width: 170px; 
+    height: 200px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0; /* Square shape */
+    border-radius: 0; 
     overflow: hidden;
     margin: auto;
     background-color: #fff;

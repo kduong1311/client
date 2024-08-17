@@ -33,16 +33,16 @@ export default {
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Đảm bảo chiều cao tối thiểu của app là chiều cao của màn hình */
+  min-height: 100vh; 
 }
 
 .main-content {
-  flex: 1; /* Chiếm không gian còn lại giữa header và footer */
+  flex: 1; 
 }
 
 footer {
-  flex-shrink: 0; /* Đảm bảo footer không bị thu nhỏ */
-  padding: 1rem; /* Ví dụ: Khoảng cách bên trong footer */
-  text-align: center; /* Canh giữa nội dung trong footer */
+  flex-shrink: 0; 
+  padding: 1rem; 
+  text-align: center;
 }
 </style>

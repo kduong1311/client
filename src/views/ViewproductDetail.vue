@@ -46,7 +46,7 @@ export default {
   methods: {
     ...mapActions(['deleteProduct']),
     getImageUrl(image) {
-      return `http://localhost:5000/${image}`; // Adjust based on your setup
+      return `https://server-xwi5.onrender.com/${image}`; // Adjust based on your setup
     },
     async deleteProduct(productId) {
       const confirmDelete = window.confirm('Are you sure you want to delete this product?');

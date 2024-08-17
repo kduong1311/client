@@ -32,7 +32,7 @@
   width: 100%;
   height: 100vh; /* Chiếm toàn bộ chiều cao của màn hình */
   background: url('../assets/pngtree-d-illustration-of-old-library-or-bookshop-with-many-books-on-image_16124328-fotor-20240807142751\ \(1\).png') no-repeat center center;
-  background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ phần tử */
+  background-size: cover; 
   position: relative;
   display: flex;
   justify-content: center;

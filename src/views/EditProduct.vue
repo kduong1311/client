@@ -100,8 +100,8 @@ export default {
 
 <style scoped>
 .form-container {
-  max-width: 400px; /* Adjust width as needed */
-  margin: 0 auto; /* Center the container */
+  max-width: 400px; 
+  margin: 0 auto; 
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;

@@ -73,7 +73,7 @@ export default {
     }
   },
   getAvatarUrl(avatar) {
-    return avatar ? `http://localhost:5000/${avatar}` : null;
+    return avatar ? `https://server-xwi5.onrender.com/${avatar}` : null;
   },
   },
   mounted() {
