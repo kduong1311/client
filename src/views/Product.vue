@@ -103,7 +103,10 @@ export default {
 }
 
 .banner {
+  padding-top: 15px;
   width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .buttonnew {
