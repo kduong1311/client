@@ -110,6 +110,8 @@ export default {
 <style scoped>
 .container {
   margin-left: 45px;
+  margin-right: 45px;
+  max-height: calc(100vh - 100px);
   overflow-y: auto;
 }
 
