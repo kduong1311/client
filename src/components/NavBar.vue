@@ -10,7 +10,7 @@
         <div class="d-flex align-items-center me-3">
           <!-- Logo Section -->
           <router-link class="navbar-logo-link" to="/homepage">
-            <img src="http://localhost:5000/uploads/Untitled-12.png" alt="Logo" class="navbar-logo"/>
+            <img src="https://server-xwi5.onrender.com/uploads/Untitled-12.png" alt="Logo" class="navbar-logo"/>
           </router-link>
           <!-- Search Form -->
           <form @submit.prevent="handleSearch" v-if="role !== 'admin'" class="ms-3">
@@ -75,31 +75,30 @@ export default {
   computed: {
     ...mapGetters(['isAuthenticated', 'role', 'avatar']),
     avatarUrl() {
-      return this.avatar ? `http://localhost:5000/${this.avatar}` : "";
+      return this.avatar ? `https://server-xwi5.onrender.com/${this.avatar}` : "";
     }
   },
   methods: {
     ...mapActions(['logout', 'setSearchTerm', 'fetchProducts', 'fetchProfile']),
     handleLogout() {
       this.logout().then(() => {
-        this.$router.push('/'); // Chuyển hướng đến trang chủ sau khi đăng xuất
+        this.$router.push('/'); //redirect to home page
       });
     },
     handleSearch() {
       this.setSearchTerm(this.searchTerm);
 
-      // Kiểm tra xem hiện tại có phải là trang danh sách sản phẩm không
       if (this.$route.path !== '/products') {
         this.$router.push('/products');
       } else {
-        // Làm mới danh sách sản phẩm nếu đã ở trang danh sách sản phẩm
+
         this.fetchProducts();
       }
     },
     handleProductsClick() {
-      this.searchTerm = ''; // Xóa trường tìm kiếm
-      this.setSearchTerm(this.searchTerm); // Xác nhận trường tìm kiếm đã được làm trống
-      this.fetchProducts(); // Làm mới danh sách sản phẩm
+      this.searchTerm = ''; 
+      this.setSearchTerm(this.searchTerm); 
+      this.fetchProducts(); 
     },
 
     async getUserProfile() {
