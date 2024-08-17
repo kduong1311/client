@@ -59,8 +59,10 @@
   
   <style scoped>
   .container {
-    margin-left: 45px;
-    margin-right: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .user-table {
