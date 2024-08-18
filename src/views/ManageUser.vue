@@ -18,7 +18,7 @@
               <td>{{ user.fullname }}</td>
               <td>{{ user.phoneNumber }}</td>
               <td>{{ user.role }}</td>
-              <td><img :src="user.avatar" alt="Avatar" width="50"></td>{{user.avatar }}
+              <td><img :src="user.avatar" alt="Avatar" width="50"></td>
             </tr>
           </tbody>
         </table>
