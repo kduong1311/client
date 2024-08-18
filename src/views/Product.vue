@@ -75,7 +75,7 @@ export default {
       return `https://server-xwi5.onrender.com/${image}`;
     },
     truncatedDescription(description) {
-      return description.length > 20 ? description.substring(0, 21) + '...' : description;
+      return description.length > 20 ? description.substring(0, 20) + '...' : description;
     },
     truncatedName(name) {
       return name.length > 12 ? name.substring(0, 12) + '...' : name;
