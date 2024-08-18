@@ -31,7 +31,7 @@
           >
             <div class="card">
               <div class="card-img-container">
-                <img :src="getImageUrl(product.image)" alt="Product Image" class="card-img-top">{{getImageUrl(product.image)}}
+                <img :src="getImageUrl(product.image)" alt="Product Image" class="card-img-top">
               </div>
               <div class="card-body">
                 <p class="card-title">{{ truncatedName(product.name) }}</p>
