@@ -62,7 +62,7 @@
         address: 'The Dome, Henry Tudor Court, Avery Hill Road, SE9 2UG',
         facebookUrl: 'https://www.facebook.com/duong.trankhanh.982/',
         emailUrl: 'mailto: mail.google.com',
-        zaloQRCode: 'http://localhost:5000/uploads/z5729553862710_d09fe491c7e9d4484a7951004cfa5409.jpg',
+        zaloQRCode: 'https://server-xwi5.onrender.com/uploads/z5729553862710_d09fe491c7e9d4484a7951004cfa5409.jpg',
         error: null
       };
     }
