@@ -16,27 +16,38 @@ export default new Vuex.Store({
     sortOrder: '',          
     role: localStorage.getItem('role') || 'user', // Load role from localStorage
     avatar: localStorage.getItem('avatar') || '',
-    searchTerm: '',
+    searchTerm: '',        //Search string
     users: []
   },
 
   mutations: {
+    // set authenticate status
     SET_AUTHENTICATED(state, status) {
       state.isAuthenticated = status;
     },
+
+    //set error sate
     SET_ERROR(state, error) {
       state.error = error;
     },
+
+    //set sucess sate
     SET_SUCCESS(state, success) {
       state.success = success;
     },
+
+    //clear errorand success sate
     CLEAR_MESSAGES(state) {
       state.error = null;
       state.success = null;
     },
+
+    //set profile
     SET_PROFILE(state, profile) {
       state.profile = profile;
     },
+
+    //set other states
     SET_PRODUCTS(state, products) {
       state.products = products;
     },
@@ -59,22 +70,30 @@ export default new Vuex.Store({
       state.users = users;
     },
   },
+
   actions: {
+
     async login({ commit }, credentials) {
       try {
         const response = await api.login(credentials.username, credentials.password);
 
+        //get data from server and save the some data ìnto localstorage
         const {user, token} = response;
         localStorage.setItem('token', token);
         localStorage.setItem('role', user.role)
         localStorage.setItem('avatar', user.avatar)
 
 
+        //set header to send to server
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+        //comit some state by use mutations
         commit('SET_AUTHENTICATED', true);
         commit('SET_AVATAR', user.avatar)
         commit('SET_ROLE', user.role)
         commit('SET_ERROR', null);
+
+        //catch any error
       } catch (error) {
         console.error('Login error:', error);
         const errorMessage = error.message || 'An unknown error occurred';

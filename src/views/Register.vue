@@ -85,13 +85,13 @@ export default {
       if (file) {
         // Check file size
         if (file.size > 2 * 1024 * 1024) { // 2MB limit
-          this.$store.commit('SET_ERROR', 'File quá lớn, vui lòng chọn file nhỏ hơn 2MB.');
+          this.$store.commit('SET_ERROR', 'choose file lower than 2MB.');
           return;
         }
         // Check file type (optional)
         const validTypes = ['image/jpeg', 'image/png'];
         if (!validTypes.includes(file.type)) {
-          this.$store.commit('SET_ERROR', 'Chỉ chấp nhận định dạng file JPEG hoặc PNG.');
+          this.$store.commit('SET_ERROR', 'Only PNG or JPG');
           return;
         }
         this.avatar = file;
@@ -102,7 +102,7 @@ export default {
 
       // Validate password
       if (this.password !== this.repeatPassword) {
-        this.$store.commit('SET_ERROR', 'Mật khẩu không khớp!');
+        this.$store.commit('SET_ERROR', 'Password not match!');
         return;
       }
 
@@ -110,7 +110,7 @@ export default {
     // Validate age
     const ageNumber = Number(this.age);
     if (isNaN(ageNumber) || ageNumber <= 16) {
-      this.$store.commit('SET_ERROR', 'Tuổi không hợp lệ!');
+      this.$store.commit('SET_ERROR', 'Invalid age! age > 16!');
       return;
     }
 
@@ -130,7 +130,7 @@ export default {
       }
       await this.$store.dispatch('register', formData);
       } catch (error) {
-        this.$store.commit('SET_ERROR', error.message || 'Đã xảy ra lỗi trong quá trình đăng ký.');
+        this.$store.commit('SET_ERROR', error.message || 'Register Error');
       }
     },
     redirectToLogin() {
